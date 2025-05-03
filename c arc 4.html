@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>House Building</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
+            background-size: cover;
+            background-position: center;
+        }
+        .blueprint-divider {
+            background-color: #e0f2fe; /* Light blue background */
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .service-card, .work-card {
+            border: 1px solid #bfdbfe;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            background: white;
+        }
+        .service-card:hover, .work-card:hover {
+            box-shadow: 0 10px 15px rgba(59, 130, 246, 0.5);
+            transform: translateY(-5px);
+        }
+        .service-image-front, .work-image-front {
+            height: 48px;
+            width: 48px;
+            margin: 0 auto 1rem auto;
+            object-fit: contain;
+        }
+        .service-image, .work-image {
+            border-radius: 0.5rem;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <img class="h-10" src="C:\Users\venu8\OneDrive\Pictures\C-ARCH IMAGES\logo 12.png" alt="Company Logo" />
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#home" class="text-gray-600 hover:text-blue-600 px-3 py-2">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 px-3 py-2">About</a>
+                    <a href="#services" class="text-gray-600 hover:text-blue-600 px-3 py-2">Services</a>
+                    <a href="#portfolio" class="text-gray-600 hover:text-blue-600 px-3 py-2">Portfolio</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 px-3 py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-white">
+        <div class="text-center animate-fade-in">
+            <img class="h-20 mx-auto mb-4" src="C:\Users\venu8\OneDrive\Pictures\C-ARCH IMAGES\logo 12.png" alt="Company Logo" />
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Building Your Future, Step by Step</h1>
+            <p class="text-lg md:text-xl mb-6">Innovative House Building with the experienced civil & Architecture</p>
+            <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Crafting Homes with Precision & Vision</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                We blend civil engineering expertise with architectural creativity to deliver homes that are both structurally sound and beautifully designed.
+            </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Story</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-600 mb-4">
+                        With decades of experience, our team combines technical mastery with a passion for innovative design. We believe every home should reflect the unique vision of its owner while standing the test of time.
+                    </p>
+                    <p class="text-gray-600">
+                        Our awards and client testimonials speak to our commitment to excellence in both civil engineering and architecture.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba" alt="Team Member" class="rounded-md" />
+                    <img src="https://images.unsplash.com/photo-1507208770225-fc5f4f92adbe" alt="Team Member" class="rounded-md" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section id="services" class="py-16 bg-gray-100 blueprint-divider">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card" data-service="architectural">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="Architectural Design Icon" class="service-image-front" />
+                    <h3 class="text-xl font-semibold mb-2">Architectural Design</h3>
+                    <p class="text-gray-600">Custom home designs that blend aesthetics with functionality.</p>
+                </div>
+                <div class="service-card" data-service="civil">
+                    <img src="C:\Users\venu8\OneDrive\Pictures\C-ARCH IMAGES\civil pics 1.jpg" alt="Civil Engineering Icon" class="service-image-front" />
+                    <h3 class="text-xl font-semibold mb-2">Civil Engineering</h3>
+                    <p class="text-gray-600">Structural integrity and innovative solutions for every project.</p>
+                </div>
+                <div class="service-card" data-service="project">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Project Management Icon" class="service-image-front" />
+                    <h3 class="text-xl font-semibold mb-2">Project Management</h3>
+                    <p class="text-gray-600">Seamless execution from concept to completion.</p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700">Request a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="bg-white p-8 rounded-lg shadow-md hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <button id="close-details" class="mb-4 text-blue-600 hover:text-blue-800 font-semibold">&larr; Back to Services</button>
+        <div id="details-content"></div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Work</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Project 1" class="w-full h-48 object-cover" />
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Modern Family Home</h3>
+                        <p class="text-gray-600">A sleek, energy-efficient home designed for modern living.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="C:\Users\venu8\OneDrive\Pictures\C-ARCH IMAGES\house design1.jpg" alt="Project 2" class="w-full h-48 object-cover" />
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Urban Retreat</h3>
+                        <p class="text-gray-600">A compact yet luxurious home in the heart of the city.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" alt="Project 3" class="w-full h-48 object-cover" />
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Countryside Villa</h3>
+                        <p class="text-gray-600">Spacious and elegant, blending with nature.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section id="how-we-work" class="py-16 bg-gray-100 blueprint-divider">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">How We Work</h2>
+            <div id="work-cards" class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="work-card" data-work="consultation">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2913/2913469.png" alt="Consultation Icon" class="work-image-front" />
+                    <h3 class="text-lg font-semibold mb-2">Consultation</h3>
+                    <p class="text-gray-600">We listen to your vision and needs.</p>
+                </div>
+                <div class="work-card" data-work="design">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Design Icon" class="work-image-front" />
+                    <h3 class="text-lg font-semibold mb-2">Design</h3>
+                    <p class="text-gray-600">Crafting blueprints and 3D models.</p>
+                </div>
+                <div class="work-card" data-work="construction">
+                    <img src="https://cdn-icons-png.flaticon.com/512/681/681494.png" alt="Construction Icon" class="work-image-front" />
+                    <h3 class="text-lg font-semibold mb-2">Construction</h3>
+                    <p class="text-gray-600">Building with precision and care.</p>
+                </div>
+                <div class="work-card" data-work="completion">
+                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Completion Icon" class="work-image-front" />
+                    <h3 class="text-lg font-semibold mb-2">Completion</h3>
+                    <p class="text-gray-600">Handing over your dream home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Details Section -->
+    <section id="work-details" class="bg-white p-8 rounded-lg shadow-md hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <button id="close-work-details" class="mb-4 text-blue-600 hover:text-blue-800 font-semibold">&larr; Back to How We Work</button>
+        <div id="work-details-content"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">Get in Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required />
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required />
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="message" rows="4" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700">Send Message</button>
+                    </form>
+                </div>
+                <div>
+                    <p class="text-gray-600 mb-4"><strong>Phone:</strong> +91 9347174955</p>
+                    <p class="text-gray-600 mb-4"><strong>Email:</strong> venu89658@gmail.com</p>
+                    <p class="text-gray-600 mb-4"><strong>Address:</strong> Hyderabad, Telangana</p>
+                    <div class="h-64 bg-gray-200 rounded-md">
+                        <iframe class="w-full h-full rounded-md" src="https://www.google.co.in/maps/place/High+tech+City/@17.4490647,78.3697132,484m" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <p>&copy; 2025 Home Building & Architecture. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="https://www.facebook.com/share/1Y6iDQjpbM/" class="hover:text-blue-400">Facebook</a>
+                <a href="https://www.instagram.com/invites/contact/?igsh=1eydcgtaz0jpm&utm_content=gu5vipl" class="hover:text-blue-400">Instagram</a>
+                <a href="http://www.linkedin.com/in/venu-enugandula-4a52702a5" class="hover:text-blue-400">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Our Services interaction
+        const serviceCards = document.querySelectorAll('.service-card');
+        const detailsSection = document.getElementById('service-details');
+        const detailsContent = document.getElementById('details-content');
+        const closeBtn = document.getElementById('close-details');
+
+        const serviceDetails = {
+            architectural: {
+                title: "Architectural Design",
+                content: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=600&q=80" alt="Architectural Design" class="service-image" />
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Custom Home Designs</h2>
+                            <p class="mb-4">Our architectural design service focuses on creating custom home designs that blend aesthetics with functionality. We work closely with clients to bring their vision to life, ensuring every detail is tailored to their needs.</p>
+                            <p>From initial sketches to detailed blueprints, our experienced architects use the latest design tools and techniques to deliver innovative and sustainable home designs.</p>
+                        </div>
+                    </div>
+                `
+            },
+            civil: {
+                title: "Civil Engineering",
+                content: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Civil Engineering" class="service-image" />
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Structural Integrity & Innovation</h2>
+                            <p class="mb-4">Our civil engineering services ensure that every project is structurally sound and built to last. We apply innovative solutions to complex engineering challenges, prioritizing safety and sustainability.</p>
+                            <p>Our team collaborates with architects and contractors to deliver efficient and cost-effective engineering solutions tailored to each project's unique requirements.</p>
+                        </div>
+                    </div>
+                `
+            },
+            project: {
+                title: "Project Management",
+                content: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80" alt="Project Management" class="service-image" />
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Seamless Execution</h2>
+                            <p class="mb-4">Our project management service ensures seamless execution from concept to completion. We coordinate all aspects of the project, managing timelines, budgets, and resources efficiently.</p>
+                            <p>Our experienced project managers work closely with clients, architects, and contractors to deliver projects on time and within budget, maintaining the highest quality standards.</p>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        serviceCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const service = card.getAttribute('data-service');
+                if (serviceDetails[service]) {
+                    detailsContent.innerHTML = serviceDetails[service].content;
+                    detailsSection.classList.remove('hidden');
+                    document.getElementById('services').classList.add('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            detailsSection.classList.add('hidden');
+            document.getElementById('services').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // How We Work interaction
+        const workCards = document.querySelectorAll('.work-card');
+        const workDetailsSection = document.getElementById('work-details');
+        const workDetailsContent = document.getElementById('work-details-content');
+        const closeWorkBtn = document.getElementById('close-work-details');
+
+        const workDetails = {
+            consultation: {
+                title: "Consultation",
+                content: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Consultation" class="work-image" />
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Understanding Your Vision</h2>
+                            <p>We begin by listening carefully to your ideas, needs, and goals to ensure the project aligns perfectly with your expectations.</p>
+                            <ul class="list-disc list-inside">
+                                <li>Initial meetings and discussions</li>
+                                <li>Needs assessment</li>
+                                <li>Feasibility studies</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            design: {
+                title: "Design",
+                content: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Design" class="work-image" />
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Blueprints & 3D Models</h2>
+                            <p>Our expert designers create detailed blueprints and 3D models to visualize your project before construction begins.</p>
+                            <ul class="list-disc list-inside">
+                                <li>Architectural drawings</li>
+                                <li>3D renderings</li>
+                                <li>Material selection</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            construction: {
+                title: "Construction",
+                content: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1494522358652-3a1a7a1a1a1a?auto=format&fit=crop&w=600&q=80" alt="Construction" class="work-image" />
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Building with Precision</h2>
+                            <p>Our skilled construction team brings the designs to life with attention to detail and quality craftsmanship.</p>
+                            <ul class="list-disc list-inside">
+                                <li>Project management</li>
+                                <li>Quality control</li>
+                                <li>Safety compliance</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            completion: {
+                title: "Completion",
+                content: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1504384308090-1a1a1a1a1a1a?auto=format&fit=crop&w=600&q=80" alt="Completion" class="work-image" />
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Handing Over Your Dream Home</h2>
+                            <p>We ensure everything is perfect before handing over the keys to your new home.</p>
+                            <ul class="list-disc list-inside">
+                                <li>Final inspections</li>
+                                <li>Client walkthrough</li>
+                                <li>Post-construction support</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        workCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const work = card.getAttribute('data-work');
+                if (workDetails[work]) {
+                    workDetailsContent.innerHTML = workDetails[work].content;
+                    workDetailsSection.classList.remove('hidden');
+                    document.getElementById('how-we-work').classList.add('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+
+        closeWorkBtn.addEventListener('click', () => {
+            workDetailsSection.classList.add('hidden');
+            document.getElementById('how-we-work').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
